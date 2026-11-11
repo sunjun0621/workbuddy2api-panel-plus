@@ -31,8 +31,11 @@ PLAN.md
 SPEC.md
 docs/
 
-# 设计/计划文档（但 README.md 必须进版本库）
-*.md
+# 设计/计划文档：仅忽略**根目录**的 md（LOOP/PLAN/SPEC 这类）
+# 原上游写的是 *.md，会把 internal/prompt/defaultprompt.md（go:embed 资源）一起吞掉，
+# 导致 CI/容器里 `pattern defaultprompt.md: no matching files found` 编译失败。
+# 上游本地能编是因为文件在磁盘上、只是没进版本库（靠 git add -f 塞进去的）。
+/*.md
 !README.md
 !PATCHES.md
 
