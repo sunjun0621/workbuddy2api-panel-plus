@@ -45,3 +45,6 @@ docs/
 /cmd/desktopverify*/
 *.zip
 server.exe
+
+# 本地建库脚本（含账号名，不入库）
+/上传到GitHub.bat
